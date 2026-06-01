@@ -1,0 +1,115 @@
+ <div className="d-flex justify-content-start flex-wrap mt-2 pl-4">
+        <a href="#" className="btn btn-sm btn-warning mb-2 mr-2">
+          <Link to="/stock">
+            <i className="fas fa-truck"></i> Create Stock
+          </Link>
+        </a>
+
+        {user.user.user_type !== 'Receptionist' && (
+          <>
+            <a
+              href="#"
+              className="btn btn-sm btn-warning mb-2 mr-2"
+              onClick={() => setShow("stock_report")}
+            >
+              <i className="fas fa-chart-line"></i> Stock Report
+            </a>
+            
+            <a
+              href="#"
+              className="btn btn-sm btn-warning mb-2 mr-2"
+              onClick={() => setShow("income_report")}
+            >
+              <i className="fas fa-hand-holding-usd"></i> Income Report
+            </a>
+
+            {/* <a
+              href="#"
+              className="btn btn-sm btn-warning mb-2 mr-2"
+              onClick={() => setShow("paid_payments")}
+            >
+              <i className="fas fa-tag"></i> Add Rebates
+            </a> */}
+
+            {/* <a
+              href="#"
+              className="btn btn-sm btn-warning mb-2 mr-2"
+              onClick={() => setShow("suppliers")}
+            >
+              <i className="fas fa-handshake"></i> Suppliers
+            </a> */}
+
+            {/* <a
+              href="#"
+              className="btn btn-sm btn-warning mb-2 mr-2"
+              onClick={() => setShow("stock_deficit_report")}
+            >
+              <i className="fas fa-redo"></i> Stock Deficit
+            </a> */}
+
+            {/* <a
+              href="#"
+              className="btn btn-sm btn-warning mb-2 mr-2"
+              onClick={() => setShow("expired_stock_report")}
+            >
+              <i className="fas fa-exclamation-triangle"></i> Expired Stock
+            </a> */}
+          </>
+        )}
+
+        <a
+          href="#"
+          className="btn btn-sm btn-warning mb-2 mr-2"
+          onClick={() => {
+            setShow("invoice");
+            resetFormData();
+          }}
+        >
+          <i className="fas fa-receipt"></i> Invoices
+        </a>
+
+        <a
+          href="#"
+          className="btn btn-sm btn-warning mb-2 mr-2"
+          onClick={() => setShow("add_expense")}
+        >
+          <i className="fas fa-minus-circle"></i> Add Expense
+        </a>
+
+        <a
+          href="#"
+          className="btn btn-sm btn-warning mb-2 mr-2"
+          onClick={() => setShow("add_transactions")}
+        >
+          <i className="fas fa-exchange-alt"></i> Add Transactions
+        </a>
+
+        <a
+          href="#"
+          className="btn btn-sm btn-warning mb-2 mr-2"
+          onClick={() => {
+            setShow("bank_accounts");
+            resetFormData();
+          }}
+        >
+          <i className="fas fa-credit-card"></i> Bank Accounts
+        </a>
+
+        <a
+          href="#"
+          className="btn btn-sm btn-warning mb-2 mr-2"
+          onClick={() => {
+            setShow("heads");
+            resetFormData();
+          }}
+        >
+          <i className="fas fa-wallet"></i> Heads
+        </a>
+
+        <button
+          className="btn btn-sm mb-2 mr-2 btn-warning"
+          onClick={() => setShowShortcutsHelp(true)}
+        >
+          <i className="fas fa-keyboard"></i> Shortcuts (Ctrl+H)
+        </button>
+      </div>

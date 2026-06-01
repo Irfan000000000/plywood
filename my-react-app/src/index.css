@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+    font-family: 'Nunito', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+.expense_and_receipt_voucher_table tr, .expense_and_receipt_voucher_table td, .expense_and_receipt_voucher_table th {
+  border:1px solid black;
+ 
+}
+
+
+.filter-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .filter-container label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .filter-container select,
+    .filter-container input[type="date"],
+    .filter-container input[type="text"] {
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      padding: 8px;
+      font-size: 0.9rem;
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .filter-container select:focus,
+    .filter-container input[type="date"]:focus,
+    .filter-container input[type="text"]:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+      outline: none;
+    }
+    .filter-container .btn-reset {
+      background-color: #6c757d;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      transition: background-color 0.2s ease-in-out;
+    }
+    .filter-container .btn-reset:hover {
+      background-color: #5a6268;
+    }
+    .filter-container .react-select__control {
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .filter-container .react-select__control--is-focused {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+    @media (max-width: 768px) {
+      .filter-container .col-md-2,
+      .filter-container .col-md-3,
+      .filter-container .col-sm-2,
+      .filter-container .col-sm-3 {
+        margin-bottom: 15px;
+      }
+    }
+
+/* 
+ * Mobile-Responsive CSS for the POS Component 
+ * Based on the structure: .modern-pos-container > .pos-main-grid (flex) > (.products-section, .cart-section)
+ */
+
+/* ==========================================================================
+   1. Mobile-First Styles (Default for screens up to 767px)
+   ========================================================================== */
+
+.modern-pos-container {
+    /* Ensure the container uses the full viewport height on mobile */
+    min-height: 100vh;
+}
+
+.pos-header {
+    /* Reduce padding on smaller screens */
+    padding: 0.75rem 1rem;
+}
+
+.pos-header h1 {
+    /* Adjust font size for mobile */
+    font-size: 1.25rem;
+}
+
+.pos-main-grid {
+    /* Stack the product and cart sections vertically */
+    display: flex;
+    flex-direction: column;
+    /* Remove fixed height to allow content to scroll naturally */
+    height: auto; 
+    padding-right: 0; /* Remove desktop padding */
+}
+
+.products-section {
+    /* Full width on mobile */
+    flex: none;
+    width: 100%;
+    padding: 0.5rem 1rem; /* Adjust padding */
+    /* Ensure it takes up a reasonable height, or let content define it */
+    min-height: 50vh; 
+}
+
+.cart-section {
+    /* Full width on mobile */
+    width: 100%;
+    /* Add some top margin to separate from the products section */
+    margin-top: 1rem; 
+    padding: 1rem; /* Adjust padding */
+    /* Ensure the cart section is visible, perhaps at the bottom */
+    order: 1; /* Place cart below products */
+}
+
+.product-list {
+    /* Adjust the grid for product cards on mobile */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+}
+
+.product-card {
+    /* Adjust card padding and font size for mobile */
+    padding: 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Adjustments for the cart item list (assuming .cart-item is the class) */
+.cart-item {
+    padding: 0.75rem 0;
+}
+
+
+
+/* ==========================================================================
+   2. Desktop/Tablet Styles (For screens 768px and wider)
+   ========================================================================== */
+
+@media (min-width: 768px) {
+    .pos-main-grid {
+        /* Revert to side-by-side layout */
+        flex-direction: row;
+        height: 100vh; /* Revert to full height for desktop POS feel */
+        padding-right: 20px; /* Revert to original desktop padding */
+    }
+
+    .products-section {
+        /* Revert to taking up available space */
+        flex: 1;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        min-height: auto;
+    }
+
+    .cart-section {
+        /* Revert to fixed desktop width */
+        width: 300px;
+        margin-top: 0;
+        order: 0; /* Revert order to be on the right */
+    }
+
+    .product-list {
+        /* Revert to a denser grid for desktop */
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+
+  
+}
+
+/* ==========================================================================
+   3. Optional: Very Large Screens (For screens 1200px and wider)
+   ========================================================================== */
+
+@media (min-width: 1200px) {
+    .cart-section {
+        /* Allow a slightly wider cart on very large screens */
+        width: 350px;
+    }
+    
+    .product-list {
+        /* Allow more columns on very large screens */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

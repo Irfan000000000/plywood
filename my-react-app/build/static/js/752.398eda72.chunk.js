@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_react_app=self.webpackChunkmy_react_app||[]).push([[752],{3752:(t,e,a)=>{a.r(e),a.d(e,{default:()=>u});var c=a(5043),s=a(7154),r=a(3092),n=a.n(r),o=a(579);const u=function(){const[t,e]=(0,c.useState)([]);return(0,c.useEffect)((()=>{s.A.get("http://localhost:4000/stocks").then((t=>{e(t.data.results)})).catch((t=>{console.error("Error fetching data:",t)}))}),[]),(0,o.jsx)("div",{children:t.map(((t,e)=>(0,o.jsx)(n(),{value:t.id+"-"+t.invoice_no},e)))})}}}]);
+//# sourceMappingURL=752.398eda72.chunk.js.map
